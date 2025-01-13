@@ -1,0 +1,12 @@
+# Format: https://github.com/containers/skopeo/blob/main/docs/skopeo-sync.1.md#yaml-file-content-used-source-for---src-yaml
+docker.io:
+  tls-verify: true
+  images:
+    debian:
+      - "bookworm"
+    redis:
+      - "bookworm"
+    httpd:
+      - "bookworm"
+    glimpsre/icap-detect:
+      - "v0.2.4"
