@@ -36,12 +36,12 @@ Edit YAML sync specifications :
 
 Then synchronize your desired images :
 
-    rm -Rf single-arch-images
-    mkdir -p single-arch-images
-	./sync.sh -d single-arch-images -a auth.json spec.single-arch.yaml
-	tar zcvf single-arch-images.tar single-arch-images
+    rm -Rf ~/single-arch-images && \
+    mkdir -p ~/single-arch-images && \
+	./sync.sh -d ~/single-arch-images -a auth.json spec.single-arch.yaml && \
+	tar -C ~ -z -c -v -f single-arch-images.tar single-arch-images
 
-    rm -Rf multi-arch-images
-    mkdir -p multi-arch-images
-	./sync.sh -d multi-arch-images -a auth.json -m spec.multi-arch.yaml
-	tar zcvf multi-arch-images.tar multi-arch-images
+    rm -Rf ~/multi-arch-images && \
+    mkdir -p ~/multi-arch-images && \
+	./sync.sh -d ~/multi-arch-images -a auth.json -m spec.multi-arch.yaml && \
+	tar -C ~ -z -c -v -f multi-arch-images.tar multi-arch-images
