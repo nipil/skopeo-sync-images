@@ -3,10 +3,11 @@ docker.io:
   tls-verify: true
   images:
     debian:
-      - "bookworm"
-    redis:
-      - "bookworm"
-    httpd:
-      - "bookworm"
+      - "trixie-20250113-slim"
+      - "bookworm-20250113-slim"
+      - "bullseye-20250113-slim"
+      - "buster-20240612-slim"
+      - "stretch-20220622-slim"
+      - "jessie-20210326-slim"
     glimpsre/icap-detect:
       - "v0.2.4"

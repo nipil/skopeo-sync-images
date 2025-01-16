@@ -27,4 +27,21 @@ Which results in `auth.json` :
 
 ## Sync your images
 
-    ./sync.sh
+See [documentation](https://github.com/containers/skopeo/blob/main/docs/skopeo-sync.1.md#yaml-file-content-used-source-for---src-yaml) for YAML format.
+
+Edit YAML sync specifications :
+
+    spec.multi-arch.yaml
+    spec.single-arch.yaml
+
+Then synchronize your desired images :
+
+    rm -Rf single-arch-images
+    mkdir -p single-arch-images
+	./sync.sh -d single-arch-images -a auth.json spec.single-arch.yaml
+	tar zcvf single-arch-images.tar single-arch-images
+
+    rm -Rf multi-arch-images
+    mkdir -p multi-arch-images
+	./sync.sh -d multi-arch-images -a auth.json -m spec.multi-arch.yaml
+	tar zcvf multi-arch-images.tar multi-arch-images
